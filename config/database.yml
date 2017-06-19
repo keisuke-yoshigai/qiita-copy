@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: qiita-copy_production
-  username: qiita-copy
+  username: root
   password: <%= ENV['QIITA-COPY_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
