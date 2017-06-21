@@ -1,24 +1,55 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
+  deviseを用いて作成
 
-Things you may want to cover:
+| Column | Type |          Option          |
+|:------:|:------:|:-------------------------|
+| name | string | index: true, null: false, unique: true |
+| first_name | string | |
+| family_name | string | |
+| site_url | text | |
+| address | text | |
+| self_introduction | text | |
 
-* Ruby version
+### Association
+* has_many :posts
+* has_many :comments
+* has_many :likes
 
-* System dependencies
 
-* Configuration
+## posts table
+| Column |  Type  |          Option          |
+|:------:|:------:|:-------------------------|
+| title | string | index: true, unique: true, null: false |
+| body | text | index: true, null:false, unique: true |
+| image | text | |
+| user_id | references | foreign_key: true |
 
-* Database creation
+### Association
+* has_many :comments
+* has_many :likes
+* belongs_to :user
 
-* Database initialization
 
-* How to run the test suite
+## comments table
+| Column |  Type  |          Option          |
+|:------:|:------:|:-------------------------|
+| body | text | null: false |
+| user_id | references | foreign_key: true |
+| post_id | references | foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+* belongs_to :user
+* belongs_to :post
 
-* Deployment instructions
 
-* ...
+## likes table
+| Column |  Type  |          Option          |
+|:------:|:------:|:-------------------------|
+| user_id | references | foreign_key: true |
+| post_id | references | foreign_key: true |
+
+### Association
+* belongs_to :user
+* belongs_to :post
