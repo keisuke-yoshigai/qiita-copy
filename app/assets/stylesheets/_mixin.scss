@@ -1,0 +1,13 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+@mixin tag-btn {
+  text-align: center;
+  border: 2px solid #ddd;
+  border-bottom-style: none;
+  padding: 10px;
+}
