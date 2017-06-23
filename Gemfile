@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'devise'
 
 group :production do
   gem 'unicorn'
