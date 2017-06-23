@@ -1,15 +1,138 @@
 !!!5
 %html
-  %header
+  %head
     %meta{charset: 'utf-8'}
   %body
+    %header
+      .left-content
+        = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
+        = form_tag '/' do
+          %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
+        .left-content__news
+          .left-content__news__title
+            %p news
+          .left-content__news__text
+            ストックの他にいいねが追加されました。
+      .right-content
+        = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
+        = link_to '0', root_path, class: 'right-content__notice'
+        = link_to 'ストック一覧', root_path, class: 'right-content__stock'
+        .right-content__post
+          %a{ href: '/' }
+            %i.right-content__post__input__icon.fa.fa-pencil-square-o
+            投稿する
+          %a{ href: '/' }
+            %i.right-content__post__input__icon.fa.fa-caret-down
+    %hr{ width: '100%' }
     .main
-      .main__posts
-        .main__posts__post
-    .side
-      .side__advertisement
-      .side__my-page
-      .side__feed
-  %footer
-    .left-content
-    .right-content
+      .main__header
+        %h2.main__header__title
+          プログラミングの知識を共有しよう。
+        = link_to 'ノウハウ・Tipsを投稿する', root_path, class: 'main__header__btn'
+      .main__body
+        .main__body__tag
+          = link_to 'フィード', root_path, class: 'main__body__tag--feed'
+          = link_to '全ての投稿', root_path, class: 'main__body__tag--all-posts'
+          = link_to '自分の投稿', root_path, class: 'main__body__tag--my-posts'
+        .main__body__posts
+          .main__body__posts__post
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+            %i.fa.fa-tag
+            .main__body__posts__post__info
+              .main__body__posts__post__info__text
+                Railsに新しい投稿がありました
+              .main__body__posts__post__info__good
+                %i.fa.fa-thumbs-o-up
+                  0
+            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
+          %hr
+          .main__body__posts__post
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+            %i.fa.fa-tag
+            .main__body__posts__post__info
+              .main__body__posts__post__info__text
+                Railsに新しい投稿がありました
+              .main__body__posts__post__info__good
+                %i.fa.fa-thumbs-o-up
+                  0
+            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
+          %hr
+          .main__body__posts__post
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+            %i.fa.fa-tag
+            .main__body__posts__post__info
+              .main__body__posts__post__info__text
+                Railsに新しい投稿がありました
+              .main__body__posts__post__info__good
+                %i.fa.fa-thumbs-o-up
+                  0
+            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
+          %hr
+          .main__body__posts__post
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+            %i.fa.fa-tag
+            .main__body__posts__post__info
+              .main__body__posts__post__info__text
+                Railsに新しい投稿がありました
+              .main__body__posts__post__info__good
+                %i.fa.fa-thumbs-o-up
+                  0
+            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
+          %hr
+          .main__body__posts__post
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+            %i.fa.fa-tag
+            .main__body__posts__post__info
+              .main__body__posts__post__info__text
+                Railsに新しい投稿がありました
+              .main__body__posts__post__info__good
+                %i.fa.fa-thumbs-o-up
+                  0
+            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
+          %hr
+          .main__body__posts__post
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+            %i.fa.fa-tag
+            .main__body__posts__post__info
+              .main__body__posts__post__info__text
+                Railsに新しい投稿がありました
+              .main__body__posts__post__info__good
+                %i.fa.fa-thumbs-o-up
+                  0
+            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
+          %hr
+        %a{ href: '/', class: 'main__body__posts__more' }
+          .main__body__posts__more__btn
+            もっと見る
+      .main__side
+        .main__side__advertisement
+          = image_tag 'advertisement.png', size: '250x250'
+        .main__side__account
+          = link_to image_tag('qiita_profile_icon.png', size: '65x65'), root_path, class: 'main__side__account__image'
+          = link_to 'Qiita Taro', root_path, class: 'main__side__account__name'
+          .main__side__account__action
+            %span 0 投稿
+            %span 0 contribution
+        .main__side__feed
+    %footer
+      %hr
+      .left-content
+        .left-content--black
+          = link_to '© 2011-2017 IncrementsInc.', root_path
+        .left-content--blue
+          = link_to '利用規約', root_path
+          = link_to 'プライバシー', root_path
+          = link_to 'ヘルプ', root_path
+          = link_to 'お問い合わせ', root_path
+      .right-content
+        = link_to 'Qiitaとは', root_path
+        = link_to 'ユーザー', root_path
+        = link_to 'タグ', root_path
+        = link_to 'ブログ', root_path
+        = link_to 'API', root_path
+        = link_to 'Team', root_path
+        = link_to 'Kobito', root_path
+        %a{ href: '/' }
+          %i.fa.fa-heart
+          ご意見
+          %i.fa.fa-caret-down
