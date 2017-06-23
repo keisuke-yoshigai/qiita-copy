@@ -1,0 +1,274 @@
+@import 'mixin';
+@import 'variable';
+
+body {
+  width: 100%;
+  header {
+    width: 80%;
+    line-height: 32px;
+    margin: 0 auto;
+    .left-content {
+      width: 65%;
+      margin-top: 10px;
+      &__qiita-logo {
+        img {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+      &__input {
+        float: left;
+        margin: 5px 20px 0 0;
+        padding: 0 40px 0 10px;
+        font-size: 13px;
+        color: $thin-gray;
+        line-height: 30px;
+        background-color: $white;
+        border-radius: 3px;
+        border: 2px solid $thin-gray;
+        -webkit-appearance: none;
+      }
+      &__news {
+        float: left;
+        &__title {
+          float: left;
+          p {
+            background-color: #f0ad4e;
+            color: white;
+            border-radius: 3px;
+            font-size: 70%;
+            height: 70%;
+            line-height: 150%;
+            margin: 10px 5px 0 0;
+            padding: 0 3px;
+          }
+        }
+        &__text {
+          float: left;
+          font-size: 13px;
+          margin: 3px 10px 0 0;
+        }
+      }
+    }
+    .right-content {
+      width: 35%;
+      float: right;
+      &__post {
+        float: right;
+        margin-right: 10px;
+        a {
+          float: right;
+          text-decoration: none;
+          color: $white;
+          border: 2px solid $thin-gray;
+          background-color: #4ea30a;
+          padding-right: 5px;
+          font-size: 14px;
+          margin-right: 0;
+          float: left;
+          line-height: 20px;
+          padding: 5px 10px;
+          border: 1px solid $thin-gray;
+          margin-left: -4px;
+        }
+      }
+      &__stock {
+        float: right;
+        text-decoration: none;
+        margin-right: 15px;
+        font-size: 14px;
+      }
+      &__notice {
+        width: 25px;
+        height: 25px;
+        float: right;
+        text-decoration: none;
+        margin-right: 15px;
+        font-size: 14px;
+        background-color: $thin-gray;
+        text-align: center;
+        color: $white;
+        border-radius: 3px;
+        margin-top: 3px;
+      }
+      &__profile {
+        float: right;
+      }
+    }
+  }
+  .main {
+    width: 80%;
+    margin: 0 auto;
+    @include clearfix;
+    &__header {
+      width: 75%;
+      .main__header__title {
+        line-height: 28px;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .main__header__btn {
+        background-color: #428b09;
+        color: $white;
+        width: 215px;
+        line-height: 180%;
+        border-radius: 3px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+    }
+    &__body {
+      @include clearfix;
+      float: left;
+      width: 75%;
+      &__tag {
+        @include clearfix;
+        border-bottom: 2px solid $thin-gray;
+        &--feed {
+          text-decoration: none;
+          display: block;
+          float: left;
+          @include tag-btn;
+          margin: 0;
+          font-size: 13px;
+        }
+        &--all-posts {
+          text-decoration: none;
+          display: block;
+          float: left;
+          display: block;
+          text-align: center;
+          padding: 10px;
+          margin: 0;
+          font-size: 13px;
+        }
+        &--my-posts {
+          text-decoration: none;
+          display: block;
+          float: right;
+          display: block;
+          text-align: center;
+          padding: 10px;
+          margin: 0;
+          font-size: 13px;
+        }
+      }
+      &__posts {
+        &__post {
+          height: 55px;
+          position: relative;
+          &__pg-lung-img {
+            position: absolute;
+            top: 15px;
+            bottom: 0;
+            margin: auto;
+          }
+          & i {
+            position: relative;
+            left: 25px;
+            top: 5px;
+            color: gray;
+          }
+          &__info {
+            width: 94%;
+            float: right;
+            font-size: 12px;
+            @include clearfix;
+            &__text {
+              float: left;
+              margin-top: 3px;
+            }
+            &__good {
+              float: right;
+              margin-right: 30px;
+            }
+          }
+          &__title {
+            width: 94%;
+            text-decoration: none;
+            float: right;
+            font-weight: bold;
+          }
+        }
+        &__more {
+          text-decoration: none;
+          &__btn {
+            margin: 20px 0;
+            border: 1px solid $thin-gray;
+            border-radius: 3px;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+    .main__side {
+      width: calc(25% - 10px);
+      float: right;
+      margin-left: 10px;
+
+      &__advertisement {
+      }
+      &__account {
+        width: 100%;
+        border: 2px solid $thin-gray;
+        @include clearfix;
+        &__image {
+          float: left;
+          padding: 10px
+        }
+        &__name {
+          float: left;
+          font-size: 18px;
+          padding-top: 10px;
+          text-decoration: none;
+          width: calc(100% - 65px- 35px - 20px);
+        }
+        &__action {
+          float: left;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  footer {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 100px;
+    .left-content {
+      width: 50%;
+      float: left;
+      &--black {
+        a {
+        float: left;
+        text-decoration: none;
+        color: #777;
+        margin-right: 10px;
+
+        }
+      }
+      &--blue {
+        a {
+        float: left;
+        text-decoration: none;
+        color: #23527c;
+        margin-right: 10px;
+        }
+      }
+    }
+    .right-content {
+      float: right;
+      width: 40%;
+      a {
+        float: left;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+    }
+  }
+}
