@@ -1,0 +1,114 @@
+@import 'variable';
+@import 'mixin';
+
+.main {
+  padding: 15px;
+  &__left-content {
+    width: 270px;
+    margin-right: 20px;
+    float: left;
+    &__account-image {
+      height: 270px;
+      width: 270px;
+    }
+    &__account-detail {
+      &__name {
+        height: 60px;
+        font-size: 22px;
+        padding-top: 10px;
+      }
+      &__edit {
+        color: $thin-gray;
+        font-size: 13px;
+        padding: 10px 0;
+        a {
+          color: gray;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      &__follow {
+        font-size: 13px;
+        font-weight: bold;
+        &__number {
+          float: right;
+        }
+      }
+      hr {
+        border-top: 1px solid $thin-gray;
+      }
+    }
+  }
+  &__right-content {
+    float: right;
+    width: calc(100% - 290px);
+    &__graph {
+      height: 270px;
+    }
+    &__big-tag {
+      width: 100%;
+      height: 60px;
+      a {
+        text-decoration: none;
+        text-align: center;
+        width: 33.3%;
+        height: 100%;
+        float: left;
+        font-size: 25px;
+        font-weight: bold;
+        border-top: 2px solid $thin-gray;
+        color: black;
+        padding-top: 15px;
+        &:hover {
+          background-color: $thin-gray;
+          border-top: 2px solid $green;
+        }
+        p {
+          margin-top: -5px;
+          font-size: 13px;
+        }
+      }
+    }
+    &__small-tag-title {
+      @include clearfix;
+      li {
+        float: left;
+        padding: 5px;
+        margin-top: 10px;
+        font-size: 14px;
+        &:hover {
+          background-color: $thin-gray;
+        }
+        a {
+          text-decoration: none;
+          text-align: center;
+          padding: 15px;
+          color: black;
+          border-style: none;
+        }
+      }
+      &__recent-post {
+        border: 1px solid $thin-gray;
+      }
+      &__pressed-like {
+        border-style: none;
+      }
+      &__limitted-share {
+        border-style: none;
+      }
+      &__comment {
+        border-style: none;
+      }
+    }
+    &__small-tag-detail {
+      padding: 10px 0 0 10px;
+      font-size: 14px;
+    }
+    hr {
+      border: 1px solid $thin-gray;
+      margin-top: -1px;
+    }
+  }
+}
