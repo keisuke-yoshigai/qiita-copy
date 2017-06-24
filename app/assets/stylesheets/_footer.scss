@@ -1,0 +1,40 @@
+footer {
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  font-size: 13px;
+  line-height: 100px;
+  .left-content {
+    width: 50%;
+    float: left;
+    &--black {
+      a {
+      float: left;
+      text-decoration: none;
+      color: #777;
+      margin-right: 10px;
+
+      }
+    }
+    &--blue {
+      a {
+      float: left;
+      text-decoration: none;
+      color: #23527c;
+      margin-right: 10px;
+      }
+    }
+  }
+  .right-content {
+    float: right;
+    width: 40%;
+    a {
+      float: left;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  }
+  hr {
+    border: 1px solid $thin-gray;
+  }
+}

@@ -1,0 +1,97 @@
+!!!5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+  %body
+    %header
+      .left-content
+        = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
+        = form_tag '/' do
+          %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
+        .left-content__news
+          .left-content__news__title
+            %p news
+          .left-content__news__text
+            ストックの他にいいねが追加されました。
+      .right-content
+        = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
+        = link_to '0', root_path, class: 'right-content__notice'
+        = link_to 'ストック一覧', root_path, class: 'right-content__stock'
+        .right-content__post
+          %a{ href: '/' }
+            %i.right-content__post__input__icon.fa.fa-pencil-square-o
+            投稿する
+          %a{ href: '/' }
+            %i.right-content__post__input__icon.fa.fa-caret-down
+    %hr{ width: '100%' }
+
+    .main
+      .main__left-content
+        = image_tag 'qiita_profile_icon.png', class: 'main__left-content__account-image'
+        .main__left-content__account-detail
+          .main__left-content__account-detail__name
+            Keisuke
+          %hr
+          .main__left-content__account-detail__edit
+            %a{ href: '/' }
+              %i.fa.fa-cog
+              プロフィールを編集する
+          %hr
+          .main__left-content__account-detail__follow
+            %i.fa.fa-fw.fa-tags
+            フォロー中のタグ
+            .main__left-content__account-detail__follow__number
+              0
+      .main__right-content
+        .main__right-content__graph
+        .main__right-content__big-tag
+          %a{ href: '/', class: 'main__right-content__big-tag__items' }
+            .main__right-content__big-tag__items__number 0
+            %p items
+          %a{ href: '/', class: 'main__right-content__big-tag__contribution' }
+            .main__right-content__big-tag__contribution__number 0
+            %p contribution
+          %a{ href: '/', class: 'main__right-content__big-tag__followers' }
+            .main__right-content__big-tag__followers__number 0
+            %p followers
+        %ul.main__right-content__small-tag-title
+          %li.main__right-content__small-tag-title__recent-post
+            %a{ href: '/' }
+              最近の投稿
+              %span {fa}
+          %li.main__right-content__small-tag-title__pressed-like
+            %a{ href: '/' }
+              いいねした投稿
+          %li.main__right-content__small-tag-title__limitted-share
+            %a{ href: '/' }
+              限定共有投稿
+          %li.main__right-content__small-tag-title__comment
+            %a{ href: '/' }
+              コメント
+        %hr
+        .main__right-content__small-tag-detail
+          .main__right-content__small-tag-detail__text
+            k_yoshiさんの投稿はありません。
+
+    %footer
+      %hr
+      .left-content
+        .left-content--black
+          = link_to '© 2011-2017 IncrementsInc.', root_path
+        .left-content--blue
+          = link_to '利用規約', root_path
+          = link_to 'プライバシー', root_path
+          = link_to 'ヘルプ', root_path
+          = link_to 'お問い合わせ', root_path
+      .right-content
+        = link_to 'Qiitaとは', root_path
+        = link_to 'ユーザー', root_path
+        = link_to 'タグ', root_path
+        = link_to 'ブログ', root_path
+        = link_to 'API', root_path
+        = link_to 'Team', root_path
+        = link_to 'Kobito', root_path
+        %a{ href: '/' }
+          %i.fa.fa-heart
+          ご意見
+          %i.fa.fa-caret-down
