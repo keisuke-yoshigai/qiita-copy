@@ -91,6 +91,13 @@
       }
       &__recent-post {
         border: 1px solid $thin-gray;
+        span {
+          border-radius: 3px;
+          color: $white;
+          background-color: #5bc0de;
+          font-size: 11px;
+          padding: 2px 6px;
+        }
       }
       &__pressed-like {
         border-style: none;
