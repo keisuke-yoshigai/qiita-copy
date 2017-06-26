@@ -1,0 +1,108 @@
+!!!5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+  %body
+    %header
+      .left-content
+        = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
+        = form_tag '/' do
+          %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
+        .left-content__news
+          .left-content__news__title
+            %p hot
+          .left-content__news__text
+            HotMarkdownによる情報共有サービス、Qiita:Team
+      .right-content
+        = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
+        = link_to '0', root_path, class: 'right-content__notice'
+        = link_to 'ストック一覧', root_path, class: 'right-content__stock'
+    %hr{ width: '100%' }
+    .main-new
+      .main-new__title
+        %input{ placeholder: 'タイトル', class: 'main-new__title__input' }
+        .main-new__title__status
+          未投稿
+      .main-new__tag
+        %input{ placeholder: 'プログラミング技術に関連するタグをスペース区切りで５つまで入力（例:Ruby Rails:4.2.0）', class: 'main-new__tag__input' }
+      .main-new__body
+        .main-new__body__left
+          .main-new__body__left__tag
+            .main-new__body__left__tag__left
+              .main-new__body__left__tag__left__body
+                本文
+              .main-new__body__left__tag__left__good-post
+                %i.fa.fa-book
+                %a{ href: '/' }
+                  良い記事を書くには
+            .main-new__body__left__tag__right
+              %i.fa.fa-question-circle.fa-2x
+              %i.fa.fa-smile-o.fa-2x
+              %i.fa.fa-photo.fa-2x
+          .main-new__body__left__text
+            %textarea{ placeholder: 'プログラミングの知識をmarkdown記法で書いて共有しよう', class: 'main-new__body__left__text__input' }
+        .main-new__body__right
+          .main-new__body__right__tag
+            %a{ href: '/' }
+              %i.fa.fa-angle-left
+            %a{ href: '/' }
+              %i.fa.fa-angle-right
+            %p プレビュー
+            %input{ type: 'checkbox' }
+              %p スライドモード
+          .main-new__body__right__cheetsheet
+            .main-new__body__right__cheetsheet__title
+              %i.fa.fa-question-circle
+              Markdown記法のヒント
+            .main-new__body__right__cheetsheet__example
+              .main-new__body__right__cheetsheet__example__left
+                .main-new__body__right__cheetsheet__example__left__title
+                  見出し
+                .main-new__body__right__cheetsheet__example__left__content
+                  %p # 見出し 1
+                  %p ## 見出し 2
+                  %p ### 見出し 3
+
+                .main-new__body__right__cheetsheet__example__left__title
+                  %p 強調
+                .main-new__body__right__cheetsheet__example__left__content
+                  %p **強調**
+
+                .main-new__body__right__cheetsheet__example__left__title
+                  %p 強調
+                .main-new__body__right__cheetsheet__example__left__content
+                  %p **強調**
+
+                .main-new__body__right__cheetsheet__example__left__title
+                  %p リンク
+                .main-new__body__right__cheetsheet__example__left__content
+                  %p [リンク] (http://...)
+
+                .main-new__body__right__cheetsheet__example__left__title
+                  %p コード
+                .main-new__body__right__cheetsheet__example__left__content
+                  %p ```ruby:filename.rb
+                  %p コード
+                  %p ```
+              .main-new__body__right__cheetsheet__example__right
+                .main-new__body__right__cheetsheet__example__right__title
+                  %p リスト
+                .main-new__body__right__cheetsheet__example__right__content
+                  %p - リスト 1
+                  %p - リスト 2
+                  %p &nbsp;&nbsp;&nbsp;- リスト 2-1
+                .main-new__body__right__cheetsheet__example__right__content
+                  %p 1. 番号付きリスト 1
+                  %p 2. 番号付きリスト 2
+                  %p 3. 番号付きリスト 3
+                .main-new__body__right__cheetsheet__example__right__content
+                  %p - &nbsp; [ ] &nbsp; チェックボックス 1
+                  %p - &nbsp; [ ] &nbsp; チェックボックス 2
+                  %p - &nbsp; [x] &nbsp; チェックボックス 3
+    .footer-new
+      .btn
+        %a{ href: '/' }
+          %i.fa.fa-upload
+          Qiitaに投稿
+        %a{ href: '/' }
+          %i.fa.fa-caret-up

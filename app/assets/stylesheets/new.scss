@@ -1,0 +1,192 @@
+@import 'variable';
+@import 'mixin';
+
+header {
+  width:100%;
+}
+.main-new {
+  width: calc(100% - 4px);
+  background-color: $thin-gray;
+  padding: 0 2px;
+  @include clearfix;
+  &__title {
+    margin: 2px;
+    &__input {
+      width: calc(100% - 25px);
+      line-height: 35px;
+      font-size: 22px;
+      padding: 3px 10px;
+      border: 2px solid $thin-gray;
+      border-radius: 3px;
+    }
+    &__status {
+      border: 2px solid $thin-gray;
+      border-radius: 3px;
+      color: $thick-gray;
+      font-size: 14px;
+      position: absolute;
+      top: 80px;
+      right: 20px;
+    }
+  }
+  &__tag {
+    margin: 2px;
+    &__input {
+      width: calc(100% - 25px);
+      padding: 3px 10px;
+      border: 2px solid $thin-gray;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+  }
+  &__body {
+    width: 100%;
+    border: 1px solid $thin-gray;
+    &__left {
+      float: left;
+      width: calc(50% - 2px);
+      font-size: 14px;
+      border: 1px solid $thick-gray;
+      height: 100%;
+      &__tag {
+        color: $thick-gray;
+        @include clearfix;
+        background-color: $thin-gray;
+        &__left {
+          &__body {
+            float: left;
+            background-color: $white;
+            color: $thick-gray;
+            padding:0  10px;
+            line-height: 36px;
+          }
+          &__good-post {
+            float: left;
+            padding:0  5px;
+            line-height: 36px;
+            i {
+            }
+            a {
+              text-decoration: none;
+              color: $thick-gray;
+            }
+          }
+        }
+        &__right {
+          float: right;
+          i {
+            float: right;
+            padding-right: 10px;
+            line-height: 36px;
+          }
+        }
+      }
+      &__text {
+        width: 100%;
+        &__input {
+          width: 100%;
+          height: 540px;
+          border-style: none;
+          display: block;
+        }
+      }
+    }
+    &__right {
+      float: right;
+      width: calc(50% - 2px);
+      border: 1px solid $thick-gray;
+      &__tag {
+        font-size: 13px;
+        @include clearfix;
+        background-color: $thin-gray;
+        position: relative;
+        a {
+          float: left;
+          border: 1px solid $thin-gray;
+          i {
+            line-height: calc(36px - 2px);
+            padding: 0 5px;
+          }
+        }
+        p {
+          float: left;
+          line-height: 36px;
+          margin-right: 20px;
+        }
+        input {
+          float: left;
+          background-color: red;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto -12px;
+        }
+
+      }
+      &__cheetsheet {
+        background-color: $white;
+        color: $thick-gray;
+        padding: 10px 60px;
+        @include clearfix;
+        height: 520px;
+        &__title {
+          margin-bottom: 20px;
+        }
+        &__example {
+          font-size: 14px;
+          &__left {
+            width: calc(50% - 10px - 10px);
+            margin:0  20px 10px 0;
+            float: left;
+            &__title {
+              font-weight: bold;
+            }
+            &__content {
+              background-color: $thin-gray;
+              margin-bottom: 15px;
+              padding: 5px;
+            }
+          }
+          &__right {
+            width: calc(50% - 10px - 10px);
+            float: left;
+            &__title {
+              font-weight: bold;
+            }
+            &__content {
+              background-color: $thin-gray;
+              margin-bottom: 15px;
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-new {
+  width: 100%;
+  @include clearfix;
+  background-color: $thin-gray;
+  border-style: none;
+  .btn {
+    float: right;
+    background-color: $green;
+    line-height: 30px;
+    margin: 20px;
+    border-radius: 3px;
+    a {
+      float: left;
+      color: $white;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      i {
+        float: left;
+        padding: 0 10px;
+        line-height: 30px;
+      }
+    }
+  }
+}
