@@ -7,6 +7,7 @@ header {
     margin-top: 10px;
     &__qiita-logo {
       img {
+        padding-left: 10px;
         float: left;
         margin-right: 10px;
       }
@@ -16,12 +17,10 @@ header {
       margin: 5px 20px 0 0;
       padding: 0 40px 0 10px;
       font-size: 13px;
-      color: $thin-gray;
       line-height: 30px;
-      background-color: $white;
       border-radius: 3px;
       border: 2px solid $thin-gray;
-      -webkit-appearance: none;
+      background-color: $thin-gray;
     }
     &__news {
       float: left;
@@ -88,7 +87,7 @@ header {
     }
     &__profile {
       float: right;
+      padding-right: 10px;
     }
   }
 }
-
