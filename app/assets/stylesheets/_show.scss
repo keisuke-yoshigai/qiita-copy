@@ -1,0 +1,261 @@
+@import 'mixin';
+@import 'variable';
+
+html, body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+.post-main {
+  width: 100%;
+  &__header {
+    padding: 0 150px;
+    background-color: #99CC66;
+    color: $white;
+    @include clearfix;
+    &__title {
+      width: 80%;
+      float: left;
+      font-size: 30px;
+      margin: 25px 0;
+    }
+    &__evaluation {
+      float: right;
+      @include clearfix;
+      font-size: 17px;
+      width: 20%;
+      text-align: center;
+      margin-top: 25px;
+      &__good {
+        float: left;
+        width: 50%;
+        p {
+          font-size: 13px;
+        }
+      }
+      &__comment {
+        float: left;
+        width: 50%;
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+    &__good-btn {
+      float: right;
+      text-decoration: none;
+      color: $white;
+      margin-bottom: 25px;
+      border-radius: 3px;
+      background-color: $white;
+      color: $green;
+      width: 20%;
+      @include clearfix;
+      text-align: center;
+      line-height: 25px;
+      font-size: 14px;
+    }
+  }
+  &__creater {
+    padding: 0 150px;
+    @include clearfix;
+    line-height: 36px;
+    background-color: $thin-gray;
+    &__left {
+      float: left;
+      line-height: 36px;
+      &__account-image {
+        float: left;
+        margin-right: 10px;
+      }
+      &__account-name {
+        float: left;
+        margin-right: 10px;
+        color: $thick-gray;
+      }
+      &__date {
+        float: left;
+        margin-right: 10px;
+        font-size: 13px;
+        color: $thick-gray;
+      }
+    }
+    &__right {
+      float: right;
+      &__stock-btn {
+        color: $thick-gray;
+        i, span {
+          float: left;
+          line-height: 36px;
+        }
+      }
+      &__dropdown {
+        color: $thick-gray;
+        float: left;
+        margin-left: 10px
+      }
+    }
+  }
+  &__body {
+    @include clearfix;
+    width: 100%;
+    &__content {
+      margin-left: 150px;
+      float: left;
+      width: calc((100% - 300px) * 0.75);
+      &__text {
+      }
+      &__footer {
+        width: 100%;
+        float: left;
+        padding: 10px;
+        line-height: 38px;
+        @include clearfix;
+        &__left {
+          float: left;
+          line-height: 100%;
+          &__good-btn {
+            float: left;
+            border: 1px solid $thick-gray;
+            border-radius: 3px;
+            color: $green;
+            padding: 10px;
+            font-size: 13px;
+            margin-right: 10px;
+          }
+          &__good-num {
+            border: 1px solid $thick-gray;
+            border-radius: 3px;
+            float: left;
+            font-size: 13px;
+            padding: 10px;
+          }
+        }
+        &__right {
+          font-size: 13px;
+          float: right;
+          &__stock-btn {
+            i, span {
+              color: $thick-gray;
+            }
+          }
+          &__edit-request {
+            i, span {
+              color: $thick-gray;
+            }
+          }
+        }
+      }
+      &__comment {
+        padding: 10px;
+        &__header {
+
+        }
+        &__main {
+          height: 100%;
+          border: 1px $thick-gray solid;
+          border-radius: 3px;
+          &__tags {
+            height: 100%;
+            @include clearfix;
+            background-color: $thin-gray;
+            &__left {
+              &__edit {
+                text-decoration: none;
+                display: block;
+                float: left;
+                @include tag-btn;
+                margin: 0;
+                font-size: 13px;
+                background-color: $white;
+                border-style: none;
+              }
+              &__preview {
+                text-decoration: none;
+                display: block;
+                float: left;
+                display: block;
+                text-align: center;
+                padding: 10px;
+                margin: 0;
+                font-size: 13px;
+              }
+            }
+            &__right {
+              &__markdown {
+                font-size: 12px;
+                line-height: 40px;
+                float: right;
+                color: $thick-gray;
+              }
+              padding-right: 10px;
+            }
+          }
+          &__input {
+            width: calc(100% - 10px);
+            height: 100px;
+            background-color: $thin-gray;
+            border-style: none;
+            margin: 5px;
+            border-radius: 3px;
+            font-size: 13px;
+          }
+
+        }
+        &__footer {
+          padding: 10px;
+          &__input-image {
+            font-size: 13px;
+            padding: 5px;
+            color: black;
+            background-color: $thin-gray;
+            border: 1px $thick-gray solid;
+            border-radius: 3px;
+          }
+          span {
+            font-size: 13px;
+            color: $thick-gray;
+            margin-left: 10px;
+          }
+          &__submit {
+            float: right;
+            background-color: $green;
+            color: $white;
+            padding: 5px 15px;
+            border-radius: 3px;
+            margin-bottom: 18px;
+            border: 1px $thick-gray solid;
+            font-size: 15px;
+          }
+        }
+
+      }
+    }
+    &__sidebar {
+      float: right;
+      padding-right: 150px;
+      width: calc((100% - 300px) * 0.25);
+      margin-top: 58px;
+      &__account {
+        font-size: 14px;
+        color: $thick-gray;
+        &__image {
+        }
+        &__name {
+        }
+      }
+      &__popular-posts {
+        padding: 10px;
+        &__title {
+        }
+        ul li a {
+          color: #75A9FF;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
