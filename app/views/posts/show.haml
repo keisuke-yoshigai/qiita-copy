@@ -1,0 +1,139 @@
+!!!5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+  %body
+    %header
+      .left-content
+        = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
+        = form_tag '/' do
+          %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
+        .left-content__news
+          .left-content__news__title
+            %p news
+          .left-content__news__text
+            ストックの他にいいねが追加されました。
+      .right-content
+        = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
+        = link_to '0', root_path, class: 'right-content__notice'
+        = link_to 'ストック一覧', root_path, class: 'right-content__stock'
+        .right-content__post
+          %a{ href: '/' }
+            %i.right-content__post__input__icon.fa.fa-pencil-square-o
+            投稿する
+          %a{ href: '/' }
+            %i.right-content__post__input__icon.fa.fa-caret-down
+    .post-main
+      .post-main__header
+        .post-main__header__title
+          FactoryGirlのtraitをつけたもの(複数可)を定義する
+        .post-main__header__evaluation
+          .post-main__header__evaluation__good
+            %i.fa.fa-thumbs-o-up
+            %span 0
+            %p いいね
+          .post-main__header__evaluation__comment
+            %i.fa.fa-comment-o
+            %span 0
+            %p コメント
+        %a{ href: '/', class: 'post-main__header__good-btn' }
+          %i.fa.fa-thumbs-o-up
+          %span いいね
+      .post-main__creater
+        .post-main__creater__left
+          = link_to image_tag('qiita_profile_icon.png', size: '30x30'), root_path, class: 'post-main__creater__left__account-image'
+          .post-main__creater__left__account-name
+            name
+          .post-main__creater__left__date
+            2017年06月27日に投稿
+        .post-main__creater__right
+          %a{ href: '/', class: 'post-main__creater__right__stock-btn' }
+            %i.fa.fa-folder-open
+            %span ストック
+          %a{ href: '/', class: 'post-main__creater__right__dropdown' }
+            %i.fa.fa-ellipsis-h
+      .post-main__body
+        .post-main__body__content
+          .post-main__body__content__text
+          .post-main__body__content__footer
+            .post-main__body__content__footer__left
+              %a{ href: '/', class: 'post-main__body__content__footer__left__good-btn' }
+                %i.fa.fa-thumbs-o-up
+                %span いいね
+              .post-main__body__content__footer__left__good-num
+                %p 0
+            .post-main__body__content__footer__right
+              %a{ href: '/', class: 'post-main__body__content__footer__right__stock-btn' }
+                %i.fa.fa-folder-open
+                %span ストック
+              %a{ href: '/', class: 'post-main__body__content__footer__right__edit-request' }
+                %i.fa.fa-send-o
+                %span 編集リクエスト
+              %a{ href: '/', class: 'post-main__body__content__footer__right__dropdown' }
+                %i.fa.fa-ellipsis-h
+          .post-main__body__content__comment
+            .post-main__body__content__comment__header
+              = image_tag('qiita_profile_icon.png', size: '36x36')
+              %span コメントを投稿する
+            .post-main__body__content__comment__main
+              .post-main__body__content__comment__main__tags
+                .post-main__body__content__comment__main__tags__left
+                  %span.post-main__body__content__comment__main__tags__left__edit
+                    編集
+                  %span.post-main__body__content__comment__main__tags__left__preview
+                    プレビュー
+                .post-main__body__content__comment__main__tags__right
+                  %a{ href: 'http://qiita.com/Qiita/items/c686397e4a0f4f11683d', class: 'post-main__body__content__comment__main__tags__right__markdown' }
+                    Qiita Markdown?
+                    %i.fa.fa-smile-o.fa-2x
+              %textarea{ placeholder: 'コメントを入力してください', class: 'post-main__body__content__comment__main__input' }
+            .post-main__body__content__comment__footer
+              %a{href: '/', class: 'post-main__body__content__comment__footer__input-image' }
+                %i.fa.fa-photo
+                画像を選択
+              %span またはドラッグ＆ドロップ
+              %button{ type: 'submit', value: '投稿', class: 'post-main__body__content__comment__footer__submit' }
+                投稿
+        .post-main__body__sidebar
+          .post-main__body__sidebar__account
+            = link_to image_tag('qiita_profile_icon.png', size: '45x45'), root_path, class: 'post-main__body__sidebar__account__image'
+            = link_to 'Keisuke', '/', class: 'post-main__body__sidebar__account__name'
+            %a{ href: '/'}
+              %i.fa.fa-user-plus
+              %span フォロー
+          .post-main__body__sidebar__popular-posts
+            %h6.post-main__body__sidebar__popular-posts__title
+              人気の投稿
+            %ul
+              %li
+                = link_to '人気の記事1', '/'
+              %li
+                = link_to '人気の記事2', '/'
+              %li
+                = link_to '人気の記事3', '/'
+              %li
+                = link_to '人気の記事4', '/'
+              %li
+                = link_to '人気の記事5', '/'
+    %footer
+      %hr
+      .left-content
+        .left-content--black
+          = link_to '© 2011-2017 IncrementsInc.', root_path
+        .left-content--blue
+          = link_to '利用規約', root_path
+          = link_to 'プライバシー', root_path
+          = link_to 'ヘルプ', root_path
+          = link_to 'お問い合わせ', root_path
+      .right-content
+        = link_to 'Qiitaとは', root_path
+        = link_to 'ユーザー', root_path
+        = link_to 'タグ', root_path
+        = link_to 'ブログ', root_path
+        = link_to 'API', root_path
+        = link_to 'Team', root_path
+        = link_to 'Kobito', root_path
+        %a{ href: '/' }
+          %i.fa.fa-heart
+            ご意見
+          %i.fa.fa-caret-down
