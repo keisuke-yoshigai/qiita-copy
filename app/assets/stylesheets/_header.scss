@@ -2,6 +2,7 @@ header {
   width: 80%;
   line-height: 32px;
   margin: 0 auto;
+  @include clearfix;
   .left-content {
     width: 65%;
     margin-top: 10px;
