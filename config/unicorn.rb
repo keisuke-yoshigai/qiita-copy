@@ -12,7 +12,8 @@ timeout 60
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 
-working_directory RAILS_ROOT
+app_root = "/var/www/qiita-copy"
+working_directory app_root
 
 check_client_connection false
 
