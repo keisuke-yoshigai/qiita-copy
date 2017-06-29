@@ -139,24 +139,3 @@
     }
   }
 }
-
-.user_dropdown {
-  border: 1px solid $thick-gray;
-  font-size: 14px;
-  position: absolute;
-  top: 35px;
-  right: 10px;
-  border-radius: 3px;
-  background-color: $white;
-  padding: 5px 0;
-  li{
-    color: black;
-    padding: 0 20px;
-    &:hover{
-      background-color: #bef891;
-    }
-    a{
-      color: black;
-    }
-  }
-}
