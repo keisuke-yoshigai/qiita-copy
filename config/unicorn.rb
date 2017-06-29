@@ -17,8 +17,6 @@ working_directory app_root
 
 check_client_connection false
 
-ENV['BUNDLE GEMFILE'] = RAILS_ROOT + "/Gemfile"
-
 run_once = true
 
 before_fork do |server, worker|
