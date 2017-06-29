@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load page:change', function() {
   function buildHTML(data){
     var list_front = "<ul class='user_dropdown'>";
-    var my_page = "<li><a href='/users/" + data.user_id +  "' class='user_dropdown__my-page'><i class='fa fa-fw fa-user'></i>マイページ</a></li>";
+    var my_page = "<li><a href='/users/" + data.user_id +  "' class='user_dropdown__my-page' data-method='get'><i class='fa fa-fw fa-user'></i>マイページ</a></li>";
     var setting = "<li><a href='/' class='user_dropdown__setting' data-method='get'><i class='fa fa-fw fa-cog'></i>設定</a></li>";
     var help = "<li><a href='/' class='user_dropdown__help' data-method='get'><i class='fa fa-fw fa-question'></i>ヘルプ</a></li>";
     var logout = "<li><a data-method='delete' href='/users/sign_out' class='user_dropdown__logout'><i class='fa fa-fw fa-sign-out'></i>ログアウト</a></li>";
