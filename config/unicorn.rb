@@ -13,8 +13,6 @@ timeout 60
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 
-working_directory RAILS_ROOT
-
 check_client_connection false
 
 run_once = true
