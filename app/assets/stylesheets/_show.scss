@@ -101,6 +101,7 @@ a {
   &__body {
     @include clearfix;
     width: 100%;
+    padding: 20px 0;
     &__content {
       margin-left: 150px;
       float: left;
@@ -250,12 +251,18 @@ a {
         padding: 10px;
         &__title {
         }
-        ul li a {
+        ul {
+          list-style: none;
+          li a {
           color: #75A9FF;
           font-size: 14px;
+          }
         }
       }
     }
+  }
+  .code {
+    background-color: #f7f7f7;
   }
 }
 
