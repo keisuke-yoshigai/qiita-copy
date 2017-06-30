@@ -44,7 +44,7 @@ header {
     border: 1px solid $thin-gray;
     &__left {
       float: left;
-      width: calc(50% - 2px);
+      width: calc(50% - 3px);
       font-size: 14px;
       border: 1px solid $thick-gray;
       height: 100%;
@@ -176,17 +176,15 @@ header {
     line-height: 30px;
     margin: 20px;
     border-radius: 3px;
-    a {
-      float: left;
+    input {
       color: $white;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      i {
-        float: left;
-        padding: 0 10px;
-        line-height: 30px;
-      }
+      background-color: $green;
+      border-style: none;
+    }
+    i {
+      color: $white;
+      padding: 0 10px;
+      line-height: 30px;
     }
   }
 }
