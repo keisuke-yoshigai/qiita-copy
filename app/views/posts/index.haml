@@ -35,72 +35,18 @@
           = link_to '全ての投稿', root_path, class: 'main__body__tag--all-posts'
           = link_to '自分の投稿', root_path, class: 'main__body__tag--my-posts'
         .main__body__posts
-          .main__body__posts__post
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
-            %i.fa.fa-tag
-            .main__body__posts__post__info
-              .main__body__posts__post__info__text
-                Railsに新しい投稿がありました
-              .main__body__posts__post__info__good
-                %i.fa.fa-thumbs-o-up
-                  0
-            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
-          %hr
-          .main__body__posts__post
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
-            %i.fa.fa-tag
-            .main__body__posts__post__info
-              .main__body__posts__post__info__text
-                Railsに新しい投稿がありました
-              .main__body__posts__post__info__good
-                %i.fa.fa-thumbs-o-up
-                  0
-            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
-          %hr
-          .main__body__posts__post
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
-            %i.fa.fa-tag
-            .main__body__posts__post__info
-              .main__body__posts__post__info__text
-                Railsに新しい投稿がありました
-              .main__body__posts__post__info__good
-                %i.fa.fa-thumbs-o-up
-                  0
-            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
-          %hr
-          .main__body__posts__post
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
-            %i.fa.fa-tag
-            .main__body__posts__post__info
-              .main__body__posts__post__info__text
-                Railsに新しい投稿がありました
-              .main__body__posts__post__info__good
-                %i.fa.fa-thumbs-o-up
-                  0
-            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
-          %hr
-          .main__body__posts__post
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
-            %i.fa.fa-tag
-            .main__body__posts__post__info
-              .main__body__posts__post__info__text
-                Railsに新しい投稿がありました
-              .main__body__posts__post__info__good
-                %i.fa.fa-thumbs-o-up
-                  0
-            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
-          %hr
-          .main__body__posts__post
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
-            %i.fa.fa-tag
-            .main__body__posts__post__info
-              .main__body__posts__post__info__text
-                Railsに新しい投稿がありました
-              .main__body__posts__post__info__good
-                %i.fa.fa-thumbs-o-up
-                  0
-            = link_to 'テスト環境、、ステージング環境、本番環境について', root_path, class: 'main__body__posts__post__title'
-          %hr
+          - @posts.each do |post|
+            .main__body__posts__post
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+              %i.fa.fa-tag
+              .main__body__posts__post__info
+                .main__body__posts__post__info__text
+                  Railsに新しい投稿がありました
+                .main__body__posts__post__info__good
+                  %i.fa.fa-thumbs-o-up
+                    0
+              = link_to post.title, post_path(post), class: 'main__body__posts__post__title'
+            %hr
         %a{ href: '/', class: 'main__body__posts__more' }
           .main__body__posts__more__btn
             もっと見る

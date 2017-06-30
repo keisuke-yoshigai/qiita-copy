@@ -23,7 +23,6 @@
         .main-new
           .main-new__title
             = f.text_field :title, placeholder: 'タイトル', class: 'main-new__title__input'
-            / %input{ placeholder: 'タイトル', class: 'main-new__title__input' }
             .main-new__title__status
               未投稿
           .main-new__tag
@@ -44,17 +43,16 @@
                   %i.fa.fa-photo.fa-2x
               .main-new__body__left__text
                 = f.text_area :body, placeholder: 'プログラミングの知識をmarkdown記法で書いて共有しよう', class: 'main-new__body__left__text__input'
-
-                / %textarea{ placeholder: 'プログラミングの知識をmarkdown記法で書いて共有しよう', class: 'main-new__body__left__text__input' }
           .main-new__body__right
             .main-new__body__right__tag
               %a{ href: '/' }
                 %i.fa.fa-angle-left
               %a{ href: '/' }
                 %i.fa.fa-angle-right
-              %p プレビュー
+              %a{ href: '/posts/preview' }
+                プレビュー
               %input{ type: 'checkbox' }
-                %p スライドモード
+              %span スライドモード
             .main-new__body__right__cheetsheet
               .main-new__body__right__cheetsheet__title
                 %i.fa.fa-question-circle
@@ -86,7 +84,7 @@
                   .main-new__body__right__cheetsheet__example__left__title
                     %p コード
                   .main-new__body__right__cheetsheet__example__left__content
-                    %p ```ruby:filename.rb
+                    %p ```
                     %p コード
                     %p ```
                 .main-new__body__right__cheetsheet__example__right

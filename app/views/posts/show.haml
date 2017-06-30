@@ -26,7 +26,7 @@
     .post-main
       .post-main__header
         .post-main__header__title
-          FactoryGirlのtraitをつけたもの(複数可)を定義する
+          = @post.title
         .post-main__header__evaluation
           .post-main__header__evaluation__good
             %i.fa.fa-thumbs-o-up
@@ -43,9 +43,10 @@
         .post-main__creater__left
           = link_to image_tag('qiita_profile_icon.png', size: '30x30'), root_path, class: 'post-main__creater__left__account-image'
           .post-main__creater__left__account-name
-            name
+            = @post.user.name
           .post-main__creater__left__date
-            2017年06月27日に投稿
+            = @post.created_at.strftime('%Y年%m月%d日')
+            に投稿
         .post-main__creater__right
           %a{ href: '/', class: 'post-main__creater__right__stock-btn' }
             %i.fa.fa-folder-open
@@ -55,6 +56,7 @@
       .post-main__body
         .post-main__body__content
           .post-main__body__content__text
+            = markdown(@post.body).html_safe
           .post-main__body__content__footer
             .post-main__body__content__footer__left
               %a{ href: '/', class: 'post-main__body__content__footer__left__good-btn' }
@@ -97,7 +99,7 @@
         .post-main__body__sidebar
           .post-main__body__sidebar__account
             = link_to image_tag('qiita_profile_icon.png', size: '45x45'), root_path, class: 'post-main__body__sidebar__account__image'
-            = link_to 'Keisuke', '/', class: 'post-main__body__sidebar__account__name'
+            = link_to @post.user.name, '/', class: 'post-main__body__sidebar__account__name'
             %a{ href: '/'}
               %i.fa.fa-user-plus
               %span フォロー
