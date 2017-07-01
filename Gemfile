@@ -19,6 +19,8 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'redcarpet'
 gem 'coderay'
+gem 'angular-rails-engine'
+gem 'marked-rails'
 
 group :production do
   gem 'unicorn'
