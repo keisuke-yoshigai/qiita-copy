@@ -1,16 +1,27 @@
 class PostsController < ApplicationController
   def index
     respond_to do |format|
-      format.html
+      format.html {
+        @posts = Post.includes(:user).order("created_at DESC").limit(10)
+      }
       format.json
     end
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @html = view_context.markdown(params[:input]).html_safe if params[:input]
+    respond_to do |format|
+      format.html {
+        @post = Post.new
+      }
+      format.json {
+        render 'new', handler: 'jbuilder'
+      }
+    end
   end
 
   def create
@@ -24,10 +35,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def preview
+    redirect_to action: :new
+  end
+
   private
 
   def post_strong_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body).merge(user_id: current_user.id)
   end
 
 end
