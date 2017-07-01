@@ -44,7 +44,7 @@ header {
     border: 1px solid $thin-gray;
     &__left {
       float: left;
-      width: calc(50% - 2px);
+      width: calc(50% - 3px);
       font-size: 14px;
       border: 1px solid $thick-gray;
       height: 100%;
@@ -103,15 +103,12 @@ header {
         a {
           float: left;
           border: 1px solid $thin-gray;
+          line-height: 36px;
+          margin-right: 20px;
           i {
             line-height: calc(36px - 2px);
             padding: 0 5px;
           }
-        }
-        p {
-          float: left;
-          line-height: 36px;
-          margin-right: 20px;
         }
         input {
           float: left;
@@ -121,7 +118,11 @@ header {
           bottom: 0;
           margin: auto -12px;
         }
-
+        span {
+          position: relative;
+          top: 10px;
+          left: 3px;
+        }
       }
       &__cheetsheet {
         background-color: $white;
@@ -129,6 +130,7 @@ header {
         padding: 10px 60px;
         @include clearfix;
         height: 520px;
+        overflow: scroll;
         &__title {
           margin-bottom: 20px;
         }
@@ -176,17 +178,15 @@ header {
     line-height: 30px;
     margin: 20px;
     border-radius: 3px;
-    a {
-      float: left;
+    input {
       color: $white;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      i {
-        float: left;
-        padding: 0 10px;
-        line-height: 30px;
-      }
+      background-color: $green;
+      border-style: none;
+    }
+    i {
+      color: $white;
+      padding: 0 10px;
+      line-height: 30px;
     }
   }
 }

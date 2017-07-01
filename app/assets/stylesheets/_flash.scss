@@ -1,0 +1,12 @@
+@import 'variable';
+
+.flash {
+  color: $white;
+  text-align: center;
+  &__notice {
+    background-color: $green;
+  }
+  &__alert {
+    background-color: red;
+  }
+}

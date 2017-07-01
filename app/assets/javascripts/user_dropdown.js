@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load page:change', function() {
+$(function(){
   function buildHTML(data){
     var list_front = "<ul class='user_dropdown'>";
     var my_page = "<li><a href='/users/" + data.user_id +  "' class='user_dropdown__my-page' data-method='get'><i class='fa fa-fw fa-user'></i>マイページ</a></li>";

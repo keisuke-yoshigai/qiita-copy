@@ -21,8 +21,8 @@
 ## posts table
 | Column |  Type  |          Option          |
 |:------:|:------:|:-------------------------|
-| title | string | index: true, unique: true, null: false |
-| body | text | index: true, null:false, unique: true |
+| title | string | null: false |
+| body | text | null:false |
 | image | text | |
 | user_id | references | foreign_key: true |
 

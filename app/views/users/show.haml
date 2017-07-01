@@ -18,7 +18,7 @@
         = link_to '0', root_path, class: 'right-content__notice'
         = link_to 'ストック一覧', root_path, class: 'right-content__stock'
         .right-content__post
-          %a{ href: '/' }
+          %a{ href: '/posts/new' }
             %i.right-content__post__input__icon.fa.fa-pencil-square-o
             投稿する
           %a{ href: '/' }
@@ -30,7 +30,7 @@
         = image_tag 'qiita_profile_icon.png', class: 'main__left-content__account-image'
         .main__left-content__account-detail
           .main__left-content__account-detail__name
-            Keisuke
+            = current_user.name
           %hr
           .main__left-content__account-detail__edit
             %a{ href: '/' }
@@ -71,7 +71,8 @@
         %hr
         .main__right-content__small-tag-detail
           .main__right-content__small-tag-detail__text
-            k_yoshiさんの投稿はありません。
+            = current_user.name
+            さんの投稿はありません。
 
     %footer
       %hr
