@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   $('.main-new__body__left__text__input').on('keyup', function(e){
     e.preventDefault();
     var input = $(this).val();
