@@ -30,15 +30,18 @@
         .post-main__header__evaluation
           .post-main__header__evaluation__good
             %i.fa.fa-thumbs-o-up
-            %span 0
+            %span
+              = @post.likes_count
             %p いいね
           .post-main__header__evaluation__comment
             %i.fa.fa-comment-o
             %span 0
             %p コメント
-        %a{ href: '/', class: 'post-main__header__good-btn' }
-          %i.fa.fa-thumbs-o-up
-          %span いいね
+        - if current_user.id
+          %div{ class: 'post-main__header__good-btn', post_id: "#{@post.id}" }
+            .post-main__header__good-btn--push
+              %i.fa.fa-thumbs-o-up
+              %span いいね
       .post-main__creater
         .post-main__creater__left
           = link_to image_tag('qiita_profile_icon.png', size: '30x30'), root_path, class: 'post-main__creater__left__account-image'

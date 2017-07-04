@@ -15,13 +15,29 @@
             ストックの他にいいねが追加されました。
       .right-content
         = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
+        %ul{ class: 'user_dropdown' }
+          %li
+            %a{ href: "/users/#{ current_user.id }", class: 'user_dropdown__my-page' }
+              %i{ class: 'fa fa-fw fa-user' }
+              マイページ
+          %li
+            %a{ href: "/", class: 'user_dropdown__setting' }
+              %i{ class: 'fa fa-fw fa-cog' }
+              設定
+          %li
+            %a{ href: "/", class: 'user_dropdown__help' }
+              %i{ class: 'fa fa-fw fa-question' }
+              ヘルプ
+          %li
+            %a(href="/users/sign_out" class='user_dropdown__logout' data-method='delete' )
+              %i{ class: 'fa fa-fw fa-sign-out' }
+              ログアウト
         = link_to '0', root_path, class: 'right-content__notice'
         = link_to 'ストック一覧', root_path, class: 'right-content__stock'
         .right-content__post
           %a{ href: '/posts/new' }
             %i.right-content__post__input__icon.fa.fa-pencil-square-o
             投稿する
-          %a{ href: '/posts/new' }
             %i.right-content__post__input__icon.fa.fa-caret-down
     %hr{ width: '100%' }
     .main

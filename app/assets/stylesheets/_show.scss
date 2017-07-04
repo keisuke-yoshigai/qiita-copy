@@ -43,19 +43,11 @@ a {
         }
       }
     }
-    &__good-btn {
-      float: right;
-      text-decoration: none;
-      color: $white;
-      margin-bottom: 25px;
-      border-radius: 3px;
-      background-color: $white;
-      color: $green;
-      width: 20%;
-      @include clearfix;
-      text-align: center;
-      line-height: 25px;
-      font-size: 14px;
+    &__good-btn--push {
+      @include good-btn;
+    }
+    &__good-btn--pushed {
+      @include good-btn;
     }
   }
   &__creater {
