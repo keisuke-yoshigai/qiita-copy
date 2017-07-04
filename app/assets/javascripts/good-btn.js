@@ -17,11 +17,11 @@ $(document).on('turbolinks:load', function(){
     return good_num_html;
   }
 
-  $('.post-main__header__good-btn--push').on('click',function(e){
+  $(document).on('click', '.post-main__header__good-btn--push', function(e){
     e.preventDefault();
     var post_id = Number($(this).parent().attr('post_id'));
-    var post_id = Number($(this).parent().attr('post_id'));
     var url = '/posts/' + post_id + '/likes';
+    e.stopPropagation();
 
     $.ajax({
       type: 'POST',
