@@ -2,9 +2,7 @@ class LikesController < ApplicationController
 
   def create
     create_like
-    find_likes
     find_post
-
     if @post.likes_count
       @likes_count = @post.likes_count
     else
@@ -12,9 +10,7 @@ class LikesController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.json{
-        render 'create', handler: 'jbuilder'
-      }
+      format.json
     end
   end
 
@@ -22,8 +18,6 @@ class LikesController < ApplicationController
     find_like
     @like.destroy
     find_post
-    find_likes
-
     if @post.likes_count
       @likes_count = @post.likes_count
     else
@@ -35,10 +29,6 @@ class LikesController < ApplicationController
 
   def create_like
     @like = Like.create(post_id: params[:post_id], user_id: current_user.id)
-  end
-
-  def find_likes
-    @likes = Like.where(post_id: params[:post_id])
   end
 
   def find_post
