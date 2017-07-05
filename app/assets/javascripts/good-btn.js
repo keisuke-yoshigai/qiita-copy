@@ -17,9 +17,8 @@ $(document).on('turbolinks:load', function(){
     return good_num_html;
   }
 
-  $(document).on('click', '.post-main__header__good-btn--push', function(e){
-    e.preventDefault();
-    var post_id = Number($(this).parent().attr('post_id'));
+  $('.post-main__header__good-btn').on('click', '.post-main__header__good-btn--push', function(e){
+    var post_id = $(this).parent().attr('post_id');
     var url = '/posts/' + post_id + '/likes';
     e.stopPropagation();
 
@@ -41,10 +40,10 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
-  $(document).on('click', ".post-main__header__good-btn--pushed",function(e){
+  $('.post-main__header__good-btn').on('click', ".post-main__header__good-btn--pushed",function(e){
     e.preventDefault();
-    var post_id = Number($(this).parent().attr('post_id'));
-    var like_id = Number($(this).attr('like_id'));
+    var post_id = $(this).parent().attr('post_id');
+    var like_id = $(this).attr('like_id');
     var url = '/posts/' + post_id + '/likes/' + like_id;
     $.ajax({
       type: 'DELETE',
