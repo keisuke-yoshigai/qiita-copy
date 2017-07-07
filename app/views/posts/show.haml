@@ -45,6 +45,23 @@
       .post-main__creater
         .post-main__creater__left
           = link_to image_tag('qiita_profile_icon.png', size: '30x30'), root_path, class: 'post-main__creater__left__account-image'
+          %ul{ class: 'user_dropdown' }
+            %li
+              %a{ href: "/users/#{ current_user.id }", class: 'user_dropdown__my-page' }
+                %i{ class: 'fa fa-fw fa-user' }
+                マイページ
+            %li
+              %a{ href: "/", class: 'user_dropdown__setting' }
+                %i{ class: 'fa fa-fw fa-cog' }
+                設定
+            %li
+              %a{ href: "/", class: 'user_dropdown__help' }
+                %i{ class: 'fa fa-fw fa-question' }
+                ヘルプ
+            %li
+              %a(href="/users/sign_out" class='user_dropdown__logout' data-method='delete' )
+                %i{ class: 'fa fa-fw fa-sign-out' }
+                ログアウト
           .post-main__creater__left__account-name
             = @post.user.name
           .post-main__creater__left__date
@@ -102,7 +119,7 @@
         .post-main__body__sidebar
           .post-main__body__sidebar__account
             = link_to image_tag('qiita_profile_icon.png', size: '45x45'), root_path, class: 'post-main__body__sidebar__account__image'
-            = link_to @post.user.name, '/', class: 'post-main__body__sidebar__account__name'
+            = link_to @post.user.name, "/users/#{@post.user.id}", class: 'post-main__body__sidebar__account__name'
             %a{ href: '/'}
               %i.fa.fa-user-plus
               %span フォロー
