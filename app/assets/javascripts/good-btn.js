@@ -20,7 +20,6 @@ $(document).on('turbolinks:load', function(){
   $('.post-main__header__good-btn').on('click', '.post-main__header__good-btn--push', function(e){
     var post_id = $(this).parent().attr('post_id');
     var url = '/posts/' + post_id + '/likes';
-    e.stopPropagation();
 
     $.ajax({
       type: 'POST',
