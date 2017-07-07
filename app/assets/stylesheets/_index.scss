@@ -121,20 +121,27 @@
       width: 100%;
       border: 2px solid $thin-gray;
       @include clearfix;
-      &__image {
+      &__left {
         float: left;
-        padding: 10px
+        &__image {
+          float: left;
+          padding: 10px
+        }
       }
-      &__name {
+      &__right {
+        margin-left: 10px;
         float: left;
-        font-size: 18px;
-        padding-top: 10px;
-        text-decoration: none;
-        width: calc(100% - 65px- 35px - 20px);
-      }
-      &__action {
-        float: left;
+        &__name {
+          float: left;
+          font-size: 18px;
+          padding-top: 10px;
+          text-decoration: none;
+          width: calc(100% - 65px- 35px - 20px);
+        }
+        &__action {
+        clear: both;
         font-size: 13px;
+        }
       }
     }
   }

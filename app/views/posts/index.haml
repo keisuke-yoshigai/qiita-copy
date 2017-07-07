@@ -60,7 +60,10 @@
                   Railsに新しい投稿がありました
                 .main__body__posts__post__info__good
                   %i.fa.fa-thumbs-o-up
-                    = post.likes_count
+                    - if post.likes_count
+                      = post.likes_count
+                    - else
+                      0
               = link_to post.title, post_path(post), class: 'main__body__posts__post__title'
             %hr
         %a{ href: '/', class: 'main__body__posts__more' }
@@ -70,11 +73,15 @@
         .main__side__advertisement
           = image_tag 'advertisement.png', size: '250x250'
         .main__side__account
-          = link_to image_tag('qiita_profile_icon.png', size: '65x65'), root_path, class: 'main__side__account__image'
-          = link_to current_user.name, root_path, class: 'main__side__account__name'
-          .main__side__account__action
-            %span 0 投稿
-            %span 0 contribution
+          .main__side__account__left
+          = link_to image_tag('qiita_profile_icon.png', size: '65x65'), "/users/#{ current_user.id }", class: 'main__side__account__left'
+          .main__side__account__right
+            = link_to current_user.name, "/users/#{ current_user.id }", class: 'main__side__account__right__name'
+            .main__side__account__right__action
+              %span
+                = current_user.posts.length
+                投稿
+              %span 0 contribution
         .main__side__feed
     %footer
       %hr
