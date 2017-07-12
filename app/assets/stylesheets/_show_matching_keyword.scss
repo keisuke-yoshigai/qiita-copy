@@ -1,0 +1,38 @@
+@import 'mixin';
+@import 'variable';
+
+
+.main__body {
+  &__tag--feed--keyword {
+    text-decoration: none;
+    display: block;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 13px;
+  }
+  &__tag--all-posts--keyword {
+   text-decoration: none;
+    display: block;
+    float: left;
+    @include tag-btn;
+    margin: 0;
+    font-size: 13px;
+  }
+  &__tag--my-posts--keyword {
+    text-decoration: none;
+    display: block;
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 13px;
+  }
+  p {
+    padding: 10px 0 0 10px;
+    font-size: 13px;
+  }
+}
