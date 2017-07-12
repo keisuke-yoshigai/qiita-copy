@@ -33,7 +33,7 @@
         / %a{ href: '/', class: 'main__body__posts__more' }
         /   .main__body__posts__more__btn
         /     もっと見る
-        - if current_user.keywords
+        - if current_user.keywords.empty?
           %p キーワードにマッチする記事はありません
       .main__side
         .main__side__advertisement
