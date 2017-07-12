@@ -39,6 +39,19 @@
       hr {
         border-top: 1px solid $thin-gray;
       }
+      &__keyword {
+        span {
+          font-size: 14px;
+        }
+        a {
+          font-size: 14px;
+        }
+      }
+      &__keyword-list {
+        span {
+          font-size: 14px;
+        }
+      }
     }
   }
   &__right-content {
@@ -73,6 +86,7 @@
     }
     &__small-tag-title {
       @include clearfix;
+      list-style: none;
       li {
         float: left;
         padding: 5px;
