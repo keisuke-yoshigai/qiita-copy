@@ -1,0 +1,54 @@
+@import 'variable';
+@import 'mixin';
+
+.keywords-index-main{
+  margin: 0 auto;
+  width: 40%;
+  padding: 50px 0;
+  &__lists{
+    min-height: 100px;
+    text-align: center;
+    margin-bottom: 30px;
+    &__list{
+      list-style: none;
+      @include clearfix;
+      width: 100%;
+      &__word{
+        float: left
+      }
+      &__delete-btn{
+        float: right;
+        font-size: 13px;
+        background-color: red;
+        color: $white;
+        padding: 5px 15px;
+        border: 1px solid $thin-gray;
+        border-radius: 3px;
+      }
+    }
+    hr{
+       color: $thin-gray;
+    }
+    span {
+      line-height: 100px;
+    }
+  }
+  &__form{
+    &__input{
+      float: left;
+      font-size: 13px;
+      width: 50%;
+      line-height: 34px;
+
+    }
+    &__input-btn{
+      font-size: 13px;
+      float: right;
+      background-color: $green;
+      color: $white;
+      padding: 5px 15px;
+      border: 1px solid $thin-gray;
+      border-radius: 3px;
+    }
+  }
+}
