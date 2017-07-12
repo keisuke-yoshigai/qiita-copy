@@ -37,11 +37,18 @@
               %i.fa.fa-cog
               プロフィールを編集する
           %hr
-          .main__left-content__account-detail__follow
+          .main__left-content__account-detail__keyword
             %i.fa.fa-fw.fa-tags
-            フォロー中のタグ
+            %span 登録キーワード
+            = link_to '(編集する)', keywords_path
             .main__left-content__account-detail__follow__number
-              0
+              = current_user.keywords.length
+          .main__left-content__account-detail__keyword-list
+            - if current_user.keywords.present?
+              - current_user.keywords.each do |keyword|
+                = keyword.word
+            - else
+              %span 登録しているキーワードはありません
       .main__right-content
         .main__right-content__graph
         .main__right-content__big-tag
