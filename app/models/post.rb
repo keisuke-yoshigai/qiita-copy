@@ -8,4 +8,5 @@ class Post < ApplicationRecord
     likes.find_by(user_id: user_id)
   end
 
+  scope :matching_keyword, -> (searchword){ where("title LIKE?", "%#{searchword}%") }
 end
