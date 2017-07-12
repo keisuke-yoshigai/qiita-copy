@@ -37,8 +37,15 @@ skip_before_action :verify_authenticity_token
     end
   end
 
-  def preview
-    redirect_to action: :new
+  def show_matching_keyword
+    @posts = []
+    keywords = current_user.keywords
+    words = keywords.map{ |keyword| "#{ keyword.word }" }
+    words.each do |word|
+      @posts.concat(Post.matching_keyword(word)).uniq!
+    end
+    @posts = @posts.sort{ |a, b| b.created_at<=>a.created_at }
+    render 'show_matching_keyword'
   end
 
   private
