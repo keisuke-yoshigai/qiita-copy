@@ -44,14 +44,14 @@ skip_before_action :verify_authenticity_token
     words.each do |word|
       @posts.concat(Post.matching_keyword(word)).uniq!
     end
-    @posts = @posts.sort{ |a, b| b.created_at<=>a.created_at }
+    @posts = @posts.sort{ |a, b| b.created_at <=> a.created_at }
     render 'show_matching_keyword'
   end
 
   private
 
   def post_strong_params
-    params.require(:post).permit(:title, :body).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image).merge(user_id: current_user.id)
   end
 
 end

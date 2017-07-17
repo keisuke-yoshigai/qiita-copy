@@ -21,6 +21,8 @@ gem 'redcarpet'
 gem 'coderay'
 gem 'angular-rails-engine'
 gem 'marked-rails'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
