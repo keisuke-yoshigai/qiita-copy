@@ -40,7 +40,8 @@
                 .main-new__body__left__tag__right
                   %i.fa.fa-question-circle.fa-2x
                   %i.fa.fa-smile-o.fa-2x
-                  %i.fa.fa-photo.fa-2x
+                  = f.label :image, { class: "fa fa-photo fa-2x", for: "file_field" } do
+                    = f.file_field :image, style: "display: none;", id: "file_field"
               .main-new__body__left__text
                 = f.text_area :body, placeholder: 'プログラミングの知識をmarkdown記法で書いて共有しよう', class: 'main-new__body__left__text__input'
           .main-new__body__right
@@ -55,6 +56,7 @@
               %span スライドモード
             .main-new__body__right__cheetsheet
               .main-new__body__right__cheetsheet__markdown
+              .main-new__body__right__cheetsheet__image
               .main-new__body__right__cheetsheet__title
                 %i.fa.fa-question-circle
                 Markdown記法のヒント
