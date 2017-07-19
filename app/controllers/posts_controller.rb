@@ -4,7 +4,7 @@ skip_before_action :verify_authenticity_token
   def index
     respond_to do |format|
       format.html {
-        @posts = Post.includes(:user).order("created_at DESC").limit(10)
+        @posts = Post.includes(:user).order("created_at DESC")
       }
       format.json
     end
