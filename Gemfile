@@ -23,6 +23,7 @@ gem 'angular-rails-engine'
 gem 'marked-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 group :production do
   gem 'unicorn'
