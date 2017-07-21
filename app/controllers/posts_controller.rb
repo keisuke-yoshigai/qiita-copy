@@ -4,7 +4,7 @@ skip_before_action :verify_authenticity_token
   def index
     respond_to do |format|
       format.html {
-        @posts = Post.includes(:user).order("created_at DESC")
+        @posts = Post.order("created_at DESC")
       }
       format.json
     end
@@ -13,7 +13,7 @@ skip_before_action :verify_authenticity_token
   def show
     @comment = Comment.new
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    @comments = @post.comments.includes(:user)
     @user_ids = @post.likes.map{ |like| like.user_id }
     @like = Like.find_by(user_id: current_user.id)
   end
@@ -50,6 +50,12 @@ skip_before_action :verify_authenticity_token
     end
     @posts = @posts.sort{ |a, b| b.created_at <=> a.created_at }
     render 'show_matching_keyword'
+  end
+
+  def search_post
+    @posts = Post.matching_keyword(params[:keyword])
+    @posts = @posts.sort{ |a, b| b.created_at <=> a.created_at }
+    render 'index'
   end
 
   private
