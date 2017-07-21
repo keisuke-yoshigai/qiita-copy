@@ -102,7 +102,7 @@
               %a{ href: '/', class: 'post-main__body__content__footer__right__dropdown' }
                 %i.fa.fa-ellipsis-h
 
-          - if @comments
+          - if @comments.present?
             .post-main__body__content__comments
               - @comments.each do |comment|
                 .post-main__body__content__comments__comment
@@ -113,30 +113,30 @@
                     .post-main__body__content__comments__comment__header__right
                       = comment.created_at.strftime("%Y-%m-%d %H:%M")
                   .post-main__body__content__comments__comment__text
-                    = comment.text
-            %span コメントを投稿する
-            .post-main__body__content__comment__main
-              .post-main__body__content__comment__main__tags
-                .post-main__body__content__comment__main__tags__left
-                  %span.post-main__body__content__comment__main__tags__left__edit
-                    編集
-                  %span.post-main__body__content__comment__main__tags__left__preview
-                    プレビュー
-                .post-main__body__content__comment__main__tags__right
-                  %a{ href: 'http://qiita.com/Qiita/items/c686397e4a0f4f11683d', class: 'post-main__body__content__comment__main__tags__right__markdown' }
-                    Qiita Markdown?
-                    %i.fa.fa-smile-o.fa-2x
-              = form_for [@post, @comment] do |c|
-                = c.text_area :text, placeholder: 'コメントを入力してください', class: 'post-main__body__content__comment__main__input'
-                = c.submit "投稿", class: 'post-main__body__content__comment__footer__submit'
-            .post-main__body__content__comment__footer
-              %a{href: '/', class: 'post-main__body__content__comment__footer__input-image' }
-                %i.fa.fa-photo
-                画像を選択
-              %span またはドラッグ＆ドロップ
+                    = simple_format(comment.text)
+          %span コメントを投稿する
+          .post-main__body__content__comment__main
+            .post-main__body__content__comment__main__tags
+              .post-main__body__content__comment__main__tags__left
+                %span.post-main__body__content__comment__main__tags__left__edit
+                  編集
+                %span.post-main__body__content__comment__main__tags__left__preview
+                  プレビュー
+              .post-main__body__content__comment__main__tags__right
+                %a{ href: 'http://qiita.com/Qiita/items/c686397e4a0f4f11683d', class: 'post-main__body__content__comment__main__tags__right__markdown' }
+                  Qiita Markdown?
+                  %i.fa.fa-smile-o.fa-2x
+            = form_for [@post, @comment] do |c|
+              = c.text_area :text, placeholder: 'コメントを入力してください', class: 'post-main__body__content__comment__main__input'
+              = c.submit "投稿", class: 'post-main__body__content__comment__footer__submit'
+          .post-main__body__content__comment__footer
+            %a{href: '/', class: 'post-main__body__content__comment__footer__input-image' }
+              %i.fa.fa-photo
+              画像を選択
+            %span またはドラッグ＆ドロップ
 
-              / %button{ type: 'submit', value: '投稿', class: 'post-main__body__content__comment__footer__submit' }
-              /   投稿
+            / %button{ type: 'submit', value: '投稿', class: 'post-main__body__content__comment__footer__submit' }
+            /   投稿
         .post-main__body__sidebar
           .post-main__body__sidebar__account
             = link_to image_tag('qiita_profile_icon.png', size: '45x45'), root_path, class: 'post-main__body__sidebar__account__image'
