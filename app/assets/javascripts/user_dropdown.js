@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  $('body.index').click(function(e) {
+  $('body').click(function(e) {
     if (!($.contains($('.user_dropdown')[0], e.target) || $.contains($('.right-content__profile')[0], e.target) )   ) {
       $('.user_dropdown').hide();
     }

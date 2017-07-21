@@ -48,9 +48,11 @@ a {
     }
     &__good-btn--push {
       @include good-btn;
+      cursor: pointer;
     }
     &__good-btn--pushed {
       @include good-btn;
+      cursor: pointer;
     }
   }
   &__creater {

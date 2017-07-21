@@ -75,6 +75,7 @@ header {
         &__right {
           float: right;
           label, i {
+            cursor: pointer;
             float: right;
             padding-right: 10px;
             line-height: 36px;
@@ -100,7 +101,6 @@ header {
         font-size: 13px;
         @include clearfix;
         background-color: $thin-gray;
-        position: relative;
         a {
           float: left;
           border: 1px solid $thin-gray;
@@ -113,10 +113,6 @@ header {
         }
         input {
           float: left;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto -12px;
         }
         span {
           position: relative;
@@ -173,12 +169,14 @@ header {
   background-color: $thin-gray;
   border-style: none;
   .btn {
+    cursor: pointer;
     float: right;
     background-color: $green;
     line-height: 30px;
     margin: 20px;
     border-radius: 3px;
     input {
+      cursor: pointer;
       color: $white;
       background-color: $green;
       border-style: none;
