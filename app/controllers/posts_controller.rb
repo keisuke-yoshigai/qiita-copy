@@ -11,7 +11,11 @@ skip_before_action :verify_authenticity_token
   end
 
   def show
+    @comment = Comment.new
+    @comments = @post.comments if @comments
     @post = Post.find(params[:id])
+    @user_ids = @post.likes.map{ |like| like.user_id }
+    @like = Like.find_by(user_id: current_user.id)
   end
 
   def new
