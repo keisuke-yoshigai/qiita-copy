@@ -113,7 +113,7 @@ a {
         float: left;
         padding: 10px;
         line-height: 38px;
-        @include clearfix;
+        box-sizing: border-box;
         &__left {
           float: left;
           line-height: 100%;
@@ -152,6 +152,7 @@ a {
       &__comments {
         padding: 0 10px;
         width: 100%;
+        box-sizing: border-box;
         &__comment {
           margin: 15px 0;
           &__header {
