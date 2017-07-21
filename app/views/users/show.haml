@@ -3,28 +3,7 @@
   %head
     %meta{charset: 'utf-8'}
   %body
-    %header
-      .left-content
-        = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
-        = form_tag '/' do
-          %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
-        .left-content__news
-          .left-content__news__title
-            %p news
-          .left-content__news__text
-            ストックの他にいいねが追加されました。
-      .right-content
-        = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
-        = link_to '0', root_path, class: 'right-content__notice'
-        = link_to 'ストック一覧', root_path, class: 'right-content__stock'
-        .right-content__post
-          %a{ href: '/posts/new' }
-            %i.right-content__post__input__icon.fa.fa-pencil-square-o
-            投稿する
-          %a{ href: '/' }
-            %i.right-content__post__input__icon.fa.fa-caret-down
-    %hr{ width: '100%' }
-
+    = render 'posts/header'
     .main
       .main__left-content
         = image_tag 'qiita_profile_icon.png', class: 'main__left-content__account-image'
@@ -81,25 +60,4 @@
             = current_user.name
             さんの投稿はありません。
 
-    %footer
-      %hr
-      .left-content
-        .left-content--black
-          = link_to '© 2011-2017 IncrementsInc.', root_path
-        .left-content--blue
-          = link_to '利用規約', root_path
-          = link_to 'プライバシー', root_path
-          = link_to 'ヘルプ', root_path
-          = link_to 'お問い合わせ', root_path
-      .right-content
-        = link_to 'Qiitaとは', root_path
-        = link_to 'ユーザー', root_path
-        = link_to 'タグ', root_path
-        = link_to 'ブログ', root_path
-        = link_to 'API', root_path
-        = link_to 'Team', root_path
-        = link_to 'Kobito', root_path
-        %a{ href: '/' }
-          %i.fa.fa-heart
-          ご意見
-          %i.fa.fa-caret-down
+    = render 'posts/footer'

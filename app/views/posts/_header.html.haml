@@ -1,7 +1,7 @@
 %header
   .left-content
     = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
-    = form_tag '/' do
+    = form_tag posts_search_post_path, method: :get do
       %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
     .left-content__news
       .left-content__news__title
@@ -34,4 +34,4 @@
         %i.right-content__post__input__icon.fa.fa-pencil-square-o
         投稿する
         %i.right-content__post__input__icon.fa.fa-caret-down
-%hr{ width: '100%' }
+  %hr{ width: '100%' }
