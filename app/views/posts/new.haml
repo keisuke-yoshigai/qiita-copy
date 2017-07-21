@@ -5,21 +5,7 @@
   %body
     = form_for @post do|f|
       .dody
-        %header
-          .left-content
-            = link_to image_tag('qiita_logo.png'), root_path, class: 'left-content__qiita-logo'
-            = form_tag '/' do
-              %input{ class: 'left-content__input', name: 'keyword', placeholder: 'キーワードを入力' }
-            .left-content__news
-              .left-content__news__title
-                %p hot
-              .left-content__news__text
-                HotMarkdownによる情報共有サービス、Qiita:Team
-          .right-content
-            = link_to image_tag('qiita_profile_icon.png', size: '35x35'), root_path, class: 'right-content__profile'
-            = link_to '0', root_path, class: 'right-content__notice'
-            = link_to 'ストック一覧', root_path, class: 'right-content__stock'
-        %hr{ width: '100%' }
+        = render 'header'
         .main-new
           .main-new__title
             = f.text_field :title, placeholder: 'タイトル', class: 'main-new__title__input'
@@ -52,8 +38,6 @@
                 %i.fa.fa-angle-right
               %a{ href: '/posts/preview' }
                 プレビュー
-              %input{ type: 'checkbox' }
-              %span スライドモード
             .main-new__body__right__cheetsheet
               .main-new__body__right__cheetsheet__markdown
               .main-new__body__right__cheetsheet__image
