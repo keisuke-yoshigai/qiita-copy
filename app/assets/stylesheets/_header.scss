@@ -24,6 +24,11 @@ header {
       border: 2px solid $thin-gray;
       background-color: $thin-gray;
     }
+    @media screen and (max-width: 1000px) {
+      &__news {
+        display: none;
+      }
+    }
     &__news {
       float: left;
       &__title {
@@ -66,6 +71,11 @@ header {
         padding: 5px 10px;
         border: 1px solid $thin-gray;
         margin-left: -4px;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      &__stock {
+        display: none;
       }
     }
     &__stock {
