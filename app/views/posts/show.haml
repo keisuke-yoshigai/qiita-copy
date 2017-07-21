@@ -37,11 +37,16 @@
             %i.fa.fa-comment-o
             %span 0
             %p コメント
-        - if current_user.id
-          %div{ class: 'post-main__header__good-btn', post_id: "#{@post.id}" }
+        - if @like.nil?
+          %div{ class: 'post-main__header__good-btn', post_id: "#{ @post.id }" }
             .post-main__header__good-btn--push
               %i.fa.fa-thumbs-o-up
               %span いいね
+        - else
+          %div{ class: 'post-main__header__good-btn', post_id: "#{ @post.id }" }
+            %div{ class: 'post-main__header__good-btn--pushed', like_id:  "#{ @like.id }" }
+              %i.fa.fa-thumbs-o-up
+              %span いいね済みです
       .post-main__creater
         .post-main__creater__left
           = link_to image_tag('qiita_profile_icon.png', size: '30x30'), root_path, class: 'post-main__creater__left__account-image'
@@ -63,7 +68,7 @@
                 %i{ class: 'fa fa-fw fa-sign-out' }
                 ログアウト
           .post-main__creater__left__account-name
-            = @post.user.name
+            = link_to @post.user.name, user_path(@post.user)
           .post-main__creater__left__date
             = @post.created_at.strftime('%Y年%m月%d日')
             に投稿
@@ -96,10 +101,20 @@
                 %span 編集リクエスト
               %a{ href: '/', class: 'post-main__body__content__footer__right__dropdown' }
                 %i.fa.fa-ellipsis-h
-          .post-main__body__content__comment
-            .post-main__body__content__comment__header
-              = image_tag('qiita_profile_icon.png', size: '36x36')
-              %span コメントを投稿する
+
+          - if @comments
+            .post-main__body__content__comments
+              - @comments.each do |comment|
+                .post-main__body__content__comments__comment
+                  .post-main__body__content__comments__comment__header
+                    .post-main__body__content__comments__comment__header__left
+                      = image_tag('qiita_profile_icon.png', size: '36x36')
+                      = link_to comment.user.name, user_path(comment.user)
+                    .post-main__body__content__comments__comment__header__right
+                      = comment.created_at.strftime("%Y-%m-%d %H:%M")
+                  .post-main__body__content__comments__comment__text
+                    = comment.text
+            %span コメントを投稿する
             .post-main__body__content__comment__main
               .post-main__body__content__comment__main__tags
                 .post-main__body__content__comment__main__tags__left
@@ -111,14 +126,17 @@
                   %a{ href: 'http://qiita.com/Qiita/items/c686397e4a0f4f11683d', class: 'post-main__body__content__comment__main__tags__right__markdown' }
                     Qiita Markdown?
                     %i.fa.fa-smile-o.fa-2x
-              %textarea{ placeholder: 'コメントを入力してください', class: 'post-main__body__content__comment__main__input' }
+              = form_for [@post, @comment] do |c|
+                = c.text_area :text, placeholder: 'コメントを入力してください', class: 'post-main__body__content__comment__main__input'
+                = c.submit "投稿", class: 'post-main__body__content__comment__footer__submit'
             .post-main__body__content__comment__footer
               %a{href: '/', class: 'post-main__body__content__comment__footer__input-image' }
                 %i.fa.fa-photo
                 画像を選択
               %span またはドラッグ＆ドロップ
-              %button{ type: 'submit', value: '投稿', class: 'post-main__body__content__comment__footer__submit' }
-                投稿
+
+              / %button{ type: 'submit', value: '投稿', class: 'post-main__body__content__comment__footer__submit' }
+              /   投稿
         .post-main__body__sidebar
           .post-main__body__sidebar__account
             = link_to image_tag('qiita_profile_icon.png', size: '45x45'), root_path, class: 'post-main__body__sidebar__account__image'
