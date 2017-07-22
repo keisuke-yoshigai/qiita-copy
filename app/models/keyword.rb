@@ -1,4 +1,4 @@
 class Keyword < ApplicationRecord
-  belongs_to :user
   validates :word, presence: true
+  belongs_to :user
 end

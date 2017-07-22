@@ -3,9 +3,8 @@ skip_before_action :verify_authenticity_token
 
   def index
     respond_to do |format|
-      format.html {
+      format.html
         @posts = Post.order("created_at DESC")
-      }
       format.json
     end
   end
@@ -21,12 +20,10 @@ skip_before_action :verify_authenticity_token
   def new
     @html = view_context.markdown(params[:input]).html_safe if params[:input]
     respond_to do |format|
-      format.html {
+      format.html
         @post = Post.new
-      }
-      format.json {
+      format.json
         render 'new', handler: 'jbuilder'
-      }
     end
   end
 

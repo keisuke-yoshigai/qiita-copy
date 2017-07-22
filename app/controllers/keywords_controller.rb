@@ -25,9 +25,9 @@ class KeywordsController < ApplicationController
   end
 
   def destroy
-    @keyword = Keyword.find(params[:id])
-    @keyword.destroy
-    redirect_to keywords_path, notice: 'キーワードを削除しました'
+    keyword = Keyword.find(params[:id])
+    keyword.destroy
+    redirect_to keywords_path, alert: 'キーワードを削除しました'
   end
 
   private
