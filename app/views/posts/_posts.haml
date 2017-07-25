@@ -1,0 +1,17 @@
+.main__body__posts
+  - posts.each do |post|
+    .main__body__posts__post
+      = image_tag 'https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/a366fc34caa85747b6b377c761c983a9a99b4ddb/large.jpg?1489110713', class: 'main__body__posts__post__pg-lung-img', size: '30x30'
+      %i.fa.fa-tag
+      .main__body__posts__post__info
+        .main__body__posts__post__info__text
+          Railsに新しい投稿がありました
+        .main__body__posts__post__info__good
+          %i.fa.fa-thumbs-o-up
+            - if post.likes_count
+              = post.likes_count
+            - else
+              0
+      = link_to post.title, post_path(post), class: 'main__body__posts__post__title'
+    %hr{id: 'post-hr'}
+  = paginate @posts
