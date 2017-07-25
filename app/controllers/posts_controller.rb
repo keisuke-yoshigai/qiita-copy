@@ -4,7 +4,7 @@ skip_before_action :verify_authenticity_token
   def index
     respond_to do |format|
       format.html
-        @posts = Post.order("created_at DESC")
+        @posts = Post.order("created_at DESC").page(params[:page]).per(10)
       format.json
     end
   end
@@ -39,20 +39,21 @@ skip_before_action :verify_authenticity_token
   end
 
   def show_matching_keyword
-    @posts = []
-    keywords = current_user.keywords
-    words = keywords.map{ |keyword| "#{ keyword.word }" }
-    words.each do |word|
-      @posts.concat(Post.matching_keyword(word)).uniq!
+    keywords_ary = current_user.keywords.map{ |keyword| keyword.word }
+    titles = Post.arel_table[:title]
+    title_sel = titles.matches("\%#{keywords_ary[0]}\%")
+    title_sel = titles.matches("%#{keywords_ary[0]}%")
+    for i in 1...keywords_ary.length
+      title_sel = title_sel.or(titles.matches("\%#{keywords_ary[i]}\%"))
     end
-    @posts = @posts.sort{ |a, b| b.created_at <=> a.created_at }
+    # logger.debug("SQL: #{Post.where(title_sel).to_sql}")
+    @posts = Post.order("created_at DESC").where(title_sel).page(params[:page]).per(10)
     render 'show_matching_keyword'
   end
 
   def search_post
-    @posts = Post.matching_keyword(params[:keyword])
-    @posts = @posts.sort{ |a, b| b.created_at <=> a.created_at }
-    render 'index'
+    @posts = Post.matching_keyword(params[:keyword]).order("created_at DESC").page(params[:page]).per(10)
+    render 'show_matching_keyword'
   end
 
   private

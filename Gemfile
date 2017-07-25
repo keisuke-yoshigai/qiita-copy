@@ -24,6 +24,7 @@ gem 'marked-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'kaminari'
 
 group :production do
   gem 'unicorn'
