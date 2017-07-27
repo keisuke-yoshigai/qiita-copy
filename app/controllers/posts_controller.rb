@@ -23,7 +23,6 @@ skip_before_action :verify_authenticity_token
       format.html
         @post = Post.new
       format.json
-        render 'new', handler: 'jbuilder'
     end
   end
 
@@ -33,8 +32,8 @@ skip_before_action :verify_authenticity_token
       flash[:notice] = "投稿しました"
       redirect_to action: :index
     else
-      flash.now[:alert] = "投稿できませんでした"
-      render "posts/new"
+      flash[:alert] = "投稿できませんでした"
+      redirect_to action: :new
     end
   end
 
