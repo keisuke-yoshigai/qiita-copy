@@ -9,8 +9,6 @@
         .main-new
           .main-new__title
             = f.text_field :title, placeholder: 'タイトル', class: 'main-new__title__input'
-            .main-new__title__status
-              未投稿
           .main-new__tag
             %input{ placeholder: 'プログラミング技術に関連するタグをスペース区切りで５つまで入力（例:Ruby Rails:4.2.0）', class: 'main-new__tag__input' }
           .main-new__body
@@ -36,8 +34,6 @@
                 %i.fa.fa-angle-left
               %a{ href: '/' }
                 %i.fa.fa-angle-right
-              %a{ href: '/posts/preview' }
-                プレビュー
             .main-new__body__right__cheetsheet
               .main-new__body__right__cheetsheet__markdown
               .main-new__body__right__cheetsheet__image
