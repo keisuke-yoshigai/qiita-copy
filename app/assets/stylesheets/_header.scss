@@ -3,6 +3,7 @@ header {
   width: 80%;
   line-height: 32px;
   margin: 0 auto;
+  border-bottom: 1px solid $thick-gray;
   @include clearfix;
   .left-content {
     width: 65%;

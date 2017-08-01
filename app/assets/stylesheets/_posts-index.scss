@@ -30,7 +30,7 @@
     width: 75%;
     &__tag {
       @include clearfix;
-      border-bottom: 2px solid $thin-gray;
+      border-bottom: 1px solid $thick-gray;
       &--feed {
         text-decoration: none;
         display: block;
@@ -64,6 +64,8 @@
       &__post {
         height: 55px;
         position: relative;
+        border-bottom: 1px solid $thick-gray;
+        padding-bottom: 10px;
         &__pg-lung-img {
           position: absolute;
           top: 15px;
@@ -95,6 +97,7 @@
           text-decoration: none;
           float: right;
           font-weight: bold;
+          color: #337ab7;
         }
       }
     }
@@ -126,6 +129,7 @@
           padding-top: 10px;
           text-decoration: none;
           width: calc(100% - 65px- 35px - 20px);
+          color: #337ab7;
         }
         &__action {
         clear: both;
