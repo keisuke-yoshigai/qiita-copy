@@ -2,6 +2,8 @@ footer {
   width: 80%;
   margin: 0 auto;
   font-size: 13px;
+  padding: 30px 0;
+  @include clearfix;
   .left-content {
     width: 50%;
     float: left;
@@ -11,7 +13,6 @@ footer {
       text-decoration: none;
       color: #777;
       margin-right: 10px;
-
       }
     }
     &--blue {
@@ -30,9 +31,11 @@ footer {
       float: left;
       text-decoration: none;
       margin-right: 10px;
+      color: #337ab7;
     }
   }
   hr {
-    border: 1px solid $thin-gray;
+    border-width: 1px;
+    color: $thin-gray;
   }
 }
