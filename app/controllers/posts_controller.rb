@@ -14,7 +14,7 @@ skip_before_action :verify_authenticity_token
     @post = Post.find(params[:id])
     @comments = @post.comments.includes(:user)
     @user_ids = @post.likes.map{ |like| like.user_id }
-    @like = Like.find_by(user_id: current_user.id)
+    @like = @post.likes.find_by(user_id: current_user.id)
   end
 
   def new
